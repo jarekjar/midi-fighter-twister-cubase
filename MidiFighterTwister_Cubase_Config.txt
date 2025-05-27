@@ -1,0 +1,96 @@
+# Midi Fighter Twister Configuration for Cubase
+
+This document provides instructions for configuring your Midi Fighter Twister using the Midi Fighter Utility software to work with the Cubase MIDI Remote script.
+
+## Basic Setup
+
+1. Download and install the Midi Fighter Utility from DJ TechTools website
+2. Connect your Midi Fighter Twister to your computer
+3. Open the Midi Fighter Utility
+4. Create a new configuration or reset to default
+
+## General Settings
+
+- MIDI Channel: Channel 1 (default)
+- Side button mode: Side buttons send CC messages
+
+## Encoder Configuration
+
+Configure all 16 encoders with the following settings:
+
+### Encoders 0-15 (Main Encoders)
+- Encoder MIDI Type: ENC 3FH/41H (Relative Binary Offset mode)
+- CC Number: 0-15 (matching the encoder number)
+- MIDI Channel: 1
+- Has Detent: Enabled (for centered parameters like pan)
+- Sensitivity: 5-7 (adjust to preference)
+- Acceleration: Medium
+
+### Encoder Buttons 0-15
+- CC Number: 16-31 (16 + encoder number)
+- MIDI Channel: 1
+- Switch Type: Toggle
+- LED Feedback: MIDI CC (to show on/off states)
+
+### Left Side Buttons (0-2)
+- CC Number: 32-34
+- MIDI Channel: 1
+- Switch Type: Toggle
+
+### Right Side Buttons (0-2)
+- CC Number: 35-37
+- MIDI Channel: 1
+- Switch Type: Toggle
+
+## RGB LED Colors Setup
+
+Configure RGB LEDs for visual feedback:
+
+### Mixer Page (Bank 1)
+- Encoders 0-7 (Volume): Blue
+- Encoders 8-15 (Pan): Purple
+- Set the RGB brightness to 5-7 (adjust to preference)
+
+### EQ Page (Bank 2)
+- Band 1 encoders (0,4,8,12): Red
+- Band 2 encoders (1,5,9,13): Yellow
+- Band 3 encoders (2,6,10,14): Green
+- Band 4 encoders (3,7,11,15): Blue
+
+### Plugin Page (Bank 3)
+- All encoders: White
+
+### Transport Page (Bank 4)
+- Transport controls: Orange
+- Zoom controls: Cyan
+
+## Bank Configuration
+
+The script uses Cubase's page system rather than the Twister's internal banks, but you can still set up the LED colors per bank to match the Cubase pages.
+
+1. Configure Bank 1 with blue/purple colors (Mixer page)
+2. Configure Bank 2 with red/yellow/green/blue colors (EQ page)
+3. Configure Bank 3 with white color (Plugin page)
+4. Configure Bank 4 with orange/cyan colors (Transport page)
+
+## Important Notes
+
+1. The Cubase script handles the switching between "pages" - the Midi Fighter Twister's internal banks are not used for this purpose. The right side buttons are mapped to change the active page in Cubase.
+
+2. For encoder sensitivity, if parameters are changing too quickly or too slowly, adjust the Sensitivity and Acceleration settings in the Midi Fighter Utility.
+
+3. If you're working with plugins that need finer control, consider adjusting the encoder sensitivity to a lower value.
+
+4. Save your configuration in the Midi Fighter Utility with a meaningful name like "Cubase_MFT_Config".
+
+5. Make sure your Midi Fighter Twister is properly connected and selected in Cubase's MIDI Remote setup.
+
+## Troubleshooting
+
+- If parameter feedback isn't working, ensure that "Send feedback to controller" is enabled in Cubase's MIDI Remote settings.
+
+- If buttons don't toggle properly, check the switch type setting in the Midi Fighter Utility. They should be set to "Toggle" mode.
+
+- If you encounter issues with relative encoder movement, make sure all encoders are set to "ENC 3FH/41H" mode in the Midi Fighter Utility.
+
+- If Cubase doesn't detect your Midi Fighter Twister, check that it's properly connected and appearing in Cubase's MIDI ports list. 
